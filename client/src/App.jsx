@@ -9,7 +9,8 @@ export default function App() {
       audio: true,
     });
     videoRef.current.srcObject = stream;
-  }
+    console.log(navigator);
+  };
 
   return (
     <div>
