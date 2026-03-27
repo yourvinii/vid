@@ -1,9 +1,19 @@
-import { useRef } from "react";
-
-export default function RemoteVideo() {
-  const remoteRef = useRef(null);
-
+import { forwardRef } from "react";
+//App.jsx controls stream.
+// We pass ref downward.
+// PeerConnection → remote stream → App.jsx → RemoteVideo.jsx
+const RemoteVideo = forwardRef((props, ref) => {
   return (
-    <video ref={remoteRef} autoPlay playsInline style={{ width: "400px" }} />
+    <video
+      ref={ref}
+      autoPlay
+      playsInline
+      style={{
+        width: "400px",
+        border: "2px solid blue",
+      }}
+    />
   );
-}
+});
+
+export default RemoteVideo;
